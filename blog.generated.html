@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+  <meta content="noindex, nofollow" name="robots"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>活動報告 | MOSHIMOSHI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    body {
+      font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      background-color: #FDFBF8;
+      color: #383838;
+    }
+    .text-accent { color: #008080; }
+    .bg-secondary { background-color: #F5F1EB; }
+  </style>
+</head>
+<body>
+
+  <header class="bg-white shadow sticky top-0 z-50">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="flex items-center space-x-2 text-accent font-bold text-xl"><img src="images/logo.avif" alt="MOSHIMOSHIロゴ" class="h-9 w-auto"><span>Japan Support Navi</span></a>
+      
+    <div class="hidden md:flex space-x-8">
+      <a href="index.html#navigator" class="text-gray-600 hover:text-accent transition">ビザ適格性診断</a>
+      <a href="index.html#comparison" class="text-gray-600 hover:text-accent transition">ビザ比較</a>
+      <a href="index.html#city-explorer" class="text-gray-600 hover:text-accent transition">居住地を探す</a>
+      <a href="index.html#life-support" class="text-gray-600 hover:text-accent transition">生活サポート</a>
+      <a href="blog.generated.html" class="text-gray-600 hover:text-accent transition font-bold">活動報告</a>
+      <a href="index.html#about" class="text-gray-600 hover:text-accent transition">私たちについて</a>
+      <a href="index.html#survey" class="text-gray-600 hover:text-accent transition">アンケート</a>
+    </div>
+    
+    </nav>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 py-12">
+    <h1 class="text-3xl font-bold text-center mb-10">活動報告</h1>
+    <div id="blog-container" class="space-y-10">
+      <p class="text-center text-sm text-gray-400">活動報告を読み込み中です...</p>
+    </div>
+  </main>
+
+  
+
+<footer class="bg-gray-800 text-white" id="contact">
+<div class="container mx-auto px-6 py-12">
+<div class="grid md:grid-cols-3 gap-8 text-center md:text-left items-center pt-8 border-t border-gray-700">
+<div>
+<img alt="NPO MOSHIMOSHI Logo" class="h-12 mx-auto md:mx-0 mb-4" src="images/logo.avif"/>
+<p class="font-bold">NPO MOSHIMOSHI</p>
+<p class="text-sm text-gray-400">Japan Support Navi Division</p>
+</div>
+<div>
+<h4 class="font-bold mb-4">関連リンク</h4>
+<ul class="space-y-2">
+<li><a class="text-gray-300 hover:text-white" href="https://www.moshimoshi.info/" target="_blank">公式サイト</a></li>
+<li><a class="text-gray-300 hover:text-white" href="https://www.npo-homepage.go.jp/npoportal/detail/021001139" target="_blank">内閣府NPO法人ポータルサイト</a></li>
+</ul>
+</div>
+<div>
+<p class="text-gray-300">お問い合わせ（ただいま準備中） </p>
+</div>
+</div>
+<div class="text-center text-gray-500 mt-12 pt-8 border-t border-gray-700">
+<p>© 2025 NPO MOSHIMOSHI. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch("https://opensheet.elk.sh/1uNQQbNxd6-48OwUwSCry3yqMk2F8giuMQm5XVe5QRrM/Form Responses 1")
+        .then(res => res.json())
+        .then(data => {
+          const container = document.getElementById("blog-container");
+          container.innerHTML = "";
+          data.reverse().forEach(entry => {
+            const title = entry["活動タイトル"] || entry["title"] || "タイトル未設定";
+            const body = entry["内容"] || entry["body"] || "";
+            const time = entry["Timestamp"] || "";
+            const article = document.createElement("article");
+            article.className = "bg-white p-6 rounded-lg shadow hover:shadow-lg transition";
+            article.innerHTML = `
+              <p class="text-xs text-gray-400 mb-2">${time}</p>
+              <h2 class="text-xl font-semibold mb-2 text-accent">${title}</h2>
+              <p class="text-gray-700 text-sm whitespace-pre-line leading-relaxed">${body}</p>
+            `;
+            container.appendChild(article);
+          });
+        });
+  });
+  </script>
+</body>
+</html>
