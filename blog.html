@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta content="noindex, nofollow" name="robots"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-i18n-key="blog_page_title"></title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-primary">
+
+  <header class="bg-primary/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-accent">Japan Support Navi</a>
+        <div class="hidden md:flex items-center space-x-6">
+            <a href="index.html#navigator" class="text-gray-600 hover:text-accent transition" data-i18n-key="nav_visa_eligibility"></a>
+            <a href="index.html#comparison" class="text-gray-600 hover:text-accent transition" data-i18n-key="nav_visa_comparison"></a>
+            <a href="index.html#city-explorer" class="text-gray-600 hover:text-accent transition" data-i18n-key="nav_find_city"></a>
+            <a href="index.html#life-support" class="text-gray-600 hover:text-accent transition" data-i18n-key="nav_life_support"></a>
+            <a href="blog.html" class="text-gray-600 hover:text-accent transition font-bold" data-i18n-key="nav_activity_report"></a>
+            <a href="index.html#survey" class="text-gray-600 hover:text-accent transition" data-i18n-key="nav_survey"></a>
+        </div>
+        <div class="hidden md:flex items-center space-x-2 lang-switcher ml-4">
+            <button id="lang-ja-pc" class="text-sm text-gray-500 hover:text-accent transition">日本語</button>
+            <span class="text-gray-300">|</span>
+            <button id="lang-en-pc" class="text-sm text-gray-500 hover:text-accent transition">English</button>
+        </div>
+         <img src="images/logo.avif" alt="MOSHIMOSHI" class="h-8 md:h-10 hidden md:block ml-4">
+         <button id="mobile-menu-button" class="md:hidden p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+        </button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+        <a href="index.html#navigator" class="mobile-menu-link" data-i18n-key="nav_visa_eligibility"></a>
+        <a href="index.html#comparison" class="mobile-menu-link" data-i18n-key="nav_visa_comparison"></a>
+        <a href="index.html#city-explorer" class="mobile-menu-link" data-i18n-key="nav_find_city"></a>
+        <a href="index.html#life-support" class="mobile-menu-link" data-i18n-key="nav_life_support"></a>
+        <a href="blog.html" class="mobile-menu-link font-bold" data-i18n-key="nav_activity_report"></a>
+        <a href="index.html#survey" class="mobile-menu-link" data-i18n-key="nav_survey"></a>
+        <div class="flex justify-center items-center space-x-2 py-3 lang-switcher">
+            <button id="lang-ja-mobile" class="text-sm text-gray-500 hover:text-accent transition">日本語</button>
+            <span class="text-gray-300">|</span>
+            <button id="lang-en-mobile" class="text-sm text-gray-500 hover:text-accent transition">English</button>
+        </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 py-12">
+    <h1 class="text-3xl font-bold text-center mb-10" data-i18n-key="blog_title"></h1>
+    <div id="blog-container" class="space-y-10">
+      <p class="text-center text-sm text-gray-400" data-i18n-key="blog_loading"></p>
+    </div>
+  </main>
+
+  <footer id="contact" class="bg-gray-800 text-white mt-20">
+    <div class="container mx-auto px-6 py-12">
+        <div class="grid md:grid-cols-3 gap-8 text-center md:text-left items-center pt-8 border-t border-gray-700">
+            <div>
+                <img src="images/logo.avif" alt="NPO MOSHIMOSHI Logo" class="h-12 mx-auto md:mx-0 mb-4">
+                <p class="font-bold" data-i18n-key="footer_npo_name"></p>
+                <p class="text-sm text-gray-400">Japan Support Navi Division</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4" data-i18n-key="footer_links"></h4>
+                <ul class="space-y-2">
+                    <li><a href="https://www.moshimoshi.info/" target="_blank" class="text-gray-300 hover:text-white" data-i18n-key="footer_link_official"></a></li>
+                    <li><a href="https://www.npo-homepage.go.jp/npoportal/detail/021001139" target="_blank" class="text-gray-300 hover:text-white" data-i18n-key="footer_link_npo_portal"></a></li>
+                </ul>
+            </div>
+            <div>
+                 <h4 class="font-bold mb-4" data-i18n-key="footer_contact"></h4>
+            </div>
+        </div>
+        <div class="text-center text-gray-500 mt-12 pt-8 border-t border-gray-700">
+            <p>&copy; 2025 NPO MOSHIMOSHI. All Rights Reserved.</p>
+        </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+</body>
+</html>
