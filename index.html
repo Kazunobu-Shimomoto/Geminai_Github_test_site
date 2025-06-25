@@ -10,101 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', 'Noto Sans JP', sans-serif;
-            background-color: #FDFBF8;
-            color: #383838;
-        }
-        .bg-primary { background-color: #FDFBF8; }
-        .bg-secondary { background-color: #F5F1EB; }
-        .bg-accent { background-color: #008080; }
-        .text-accent { color: #008080; }
-        .border-accent { border-color: #008080; }
-        .btn {
-            display: inline-block;
-            font-weight: 700;
-            text-align: center;
-            vertical-align: middle;
-            cursor: pointer;
-            border: 1px solid transparent;
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            border-radius: 0.5rem;
-            transition: all 0.2s ease-in-out;
-        }
-        .btn-primary {
-            background-color: #008080;
-            color: white;
-        }
-        .btn-primary:hover {
-            background-color: #006666;
-        }
-        .section-title {
-            font-size: 2.25rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-        .section-subtitle {
-            font-size: 1.125rem;
-            color: #555;
-            max-width: 800px;
-            margin: 0 auto 3rem auto;
-            text-align: center;
-            line-height: 1.8;
-        }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 300px;
-            max-height: 350px;
-        }
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 350px;
-            }
-        }
-        .tab-button {
-            transition: all 0.3s;
-            border-bottom: 4px solid transparent;
-        }
-        .tab-button.active {
-            border-color: #008080;
-            color: #008080;
-            font-weight: 700;
-        }
-        .tooltip {
-            position: absolute;
-            background-color: #333;
-            color: white;
-            padding: 8px 12px;
-            border-radius: 6px;
-            font-size: 0.875rem;
-            z-index: 10;
-            width: max-content;
-            max-width: 250px;
-            bottom: 105%;
-            left: 50%;
-            transform: translateX(-50%);
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.2s;
-            pointer-events: none;
-        }
-        .tooltip-trigger:hover .tooltip {
-            opacity: 1;
-            visibility: visible;
-        }
-        /* Language switcher style */
-        .lang-switcher button.active {
-            font-weight: 700;
-            color: #008080;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-primary">
 
@@ -116,15 +22,14 @@
                 <a href="#comparison" class="text-gray-600 hover:text-accent transition" data-i18n-key="nav_visa_comparison">Visa Comparison</a>
                 <a href="#city-explorer" class="text-gray-600 hover:text-accent transition" data-i18n-key="nav_find_city">Find a City</a>
                 <a href="#life-support" class="text-gray-600 hover:text-accent transition" data-i18n-key="nav_life_support">Life Support</a>
-                <a href="blog.generated.html" class="text-gray-600 hover:text-accent transition" data-i18n-key="nav_activity_report">Activity Report</a>
+                <a href="#" class="text-gray-600 hover:text-accent transition" data-i18n-key="nav_activity_report">Activity Report</a>
                 <a href="#survey" class="text-gray-600 hover:text-accent transition" data-i18n-key="nav_survey">Survey</a>
             </div>
-            <div class="hidden md:flex items-center space-x-2 lang-switcher">
+            <div class="hidden md:flex items-center space-x-2 lang-switcher ml-4">
                 <button id="lang-ja-pc" class="text-sm text-gray-500 hover:text-accent transition">日本語</button>
                 <span class="text-gray-300">|</span>
                 <button id="lang-en-pc" class="text-sm text-gray-500 hover:text-accent transition active">English</button>
             </div>
-            <img src="images/logo.avif" alt="MOSHIMOSHI" class="h-8 md:h-10 hidden md:block">
             <button id="mobile-menu-button" class="md:hidden p-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
             </button>
@@ -134,7 +39,7 @@
             <a href="#comparison" class="block text-center py-3 px-4 text-gray-700 hover:bg-gray-100" data-i18n-key="nav_visa_comparison">Visa Comparison</a>
             <a href="#city-explorer" class="block text-center py-3 px-4 text-gray-700 hover:bg-gray-100" data-i18n-key="nav_find_city">Find a City</a>
             <a href="#life-support" class="block text-center py-3 px-4 text-gray-700 hover:bg-gray-100" data-i18n-key="nav_life_support">Life Support</a>
-            <a href="blog.generated.html" class="block text-center py-3 px-4 text-gray-700 hover:bg-gray-100" data-i18n-key="nav_activity_report">Activity Report</a>
+            <a href="#" class="block text-center py-3 px-4 text-gray-700 hover:bg-gray-100" data-i18n-key="nav_activity_report">Activity Report</a>
             <a href="#survey" class="block text-center py-3 px-4 text-gray-700 hover:bg-gray-100" data-i18n-key="nav_survey">Survey</a>
              <div class="flex justify-center items-center space-x-2 py-3 lang-switcher">
                 <button id="lang-ja-mobile" class="text-sm text-gray-500 hover:text-accent transition">日本語</button>
@@ -199,7 +104,7 @@
                                     </div>
                                     <div class="relative">
                                         <label for="income" class="font-medium" data-i18n-key="hsp_form_income">Annual Salary (in JPY 10k)</label>
-                                        <input type="number" id="income" placeholder="e.g., 800" class="w-full mt-1 p-2 border rounded-md">
+                                        <input type="number" id="income" data-i18n-placeholder="hsp_form_income_placeholder" class="w-full mt-1 p-2 border rounded-md">
                                     </div>
                                     <div class="relative">
                                         <label for="age" class="font-medium" data-i18n-key="hsp_form_age">Age</label>
@@ -259,67 +164,22 @@
                                 </div>
                             </form>
                             <div id="nomad-result-text" class="mt-8 p-6 rounded-lg bg-gray-100 text-center min-h-[120px] flex items-center justify-center">
-                                <p class="text-gray-600" data-i18n-key="nomad_result_initial">The result will be displayed once you answer "Yes" to all questions.</p>
+                                <p class="text-gray-600" data-i18n-key="nomad_result_initial">The result will be displayed once you answer all questions.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+    </main>
 
-        <section id="comparison" class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="section-title" data-i18n-key="comparison_title">HSP vs Digital Nomad</h2>
-                <p class="section-subtitle" data-i18n-key="comparison_subtitle">Which visa is best for your life plan and career goals? Here, we thoroughly compare the main differences between the two options. This objective information will support your important decision.</p>
-                <div class="overflow-x-auto bg-white rounded-xl shadow-lg p-4">
-                    <table class="w-full text-left" id="visa-comparison-table">
-                        <thead class="bg-gray-100">
-                            <tr>
-                                <th class="p-4 font-bold w-1/4" data-i18n-key="comparison_header_item">Comparison Item</th>
-                                <th class="p-4 font-bold w-3/8" data-i18n-key="comparison_header_hsp">Highly Skilled Professional Visa (HSP)</th>
-                                <th class="p-4 font-bold w-3/8" data-i18n-key="comparison_header_nomad">Digital Nomad Visa</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <footer id="contact" class="bg-gray-800 text-white">
-          <div class="container mx-auto px-6 py-12">
-            <div class="grid md:grid-cols-3 gap-8 text-center md:text-left items-center pt-8 border-t border-gray-700">
-              <div>
-                <img src="images/logo.avif" alt="NPO MOSHIMOSHI Logo" class="h-12 mx-auto md:mx-0 mb-4">
-                <p class="font-bold" data-i18n-key="footer_npo_name">Specified Non-Profit Corporation MOSHIMOSHI</p>
-                <p class="text-sm text-gray-400">Japan Support Navi Division</p>
-              </div>
-              <div>
-                <h4 class="font-bold mb-4" data-i18n-key="footer_links">Related Links</h4>
-                <ul class="space-y-2">
-                  <li><a href="https://www.moshimoshi.info/" target="_blank" class="text-gray-300 hover:text-white" data-i18n-key="footer_link_official">Official Website</a></li>
-                  <li><a href="https://www.npo-homepage.go.jp/npoportal/detail/021001139" target="_blank" class="text-gray-300 hover:text-white" data-i18n-key="footer_link_npo_portal">Cabinet Office NPO Portal Site</a></li>
-                </ul>
-              </div>
-              <div>
-                <h4 class="font-bold mb-4" data-i18n-key="footer_contact">Contact (In preparation)</h4>
-              </div>
-            </div>
-            <div class="text-center text-gray-500 mt-12 pt-8 border-t border-gray-700">
-              <p>&copy; 2025 NPO MOSHIMOSHI. All Rights Reserved.</p>
-            </div>
-          </div>
-        </footer>
-
-    <script src="main.js"></script>
+    <footer id="contact" class="bg-gray-800 text-white mt-20">
+        <div class="container mx-auto px-6 py-12 text-center">
+             <p>&copy; 2024 NPO MOSHIMOSHI. All Rights Reserved.</p>
+        </div>
+    </footer>
 
     <script src="js/i18n.js"></script>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // ... (この中のロジックは i18n.js に移動または連携させる) ...
-    });
-    </script>
 </body>
 </html>
